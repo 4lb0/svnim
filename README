@@ -1,5 +1,9 @@
 SVN IMproved plugin
 
+Dependency:
+
+* *svn*
+
 Commands:
 
 * *<leader>sd* svn diff. You can also get the diff of version 123 by pressing *123sd*.
