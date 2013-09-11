@@ -90,10 +90,14 @@ function! s:Log(count)
   endfor
 endfunction
 
-nnoremap <silent> sd :<C-U>call s:Diff(v:count)<CR>
-nnoremap <silent> ss :call s:Status()<CR>
-nnoremap <silent> su :call s:Update()<CR>
-nnoremap <silent> sl :<C-U>call s:Log(v:count)<CR>
+if !exists('g:svnim_map_prefix')
+  let g:svnim_map_prefix = '<leader>'
+endif
+
+execute "nnoremap <silent> " . g:svnim_map_prefix . "sd :<C-U>call s:Diff(v:count)<CR>"
+execute "nnoremap <silent> " . g:svnim_map_prefix . "ss :call s:Status()<CR>"
+execute "nnoremap <silent> " . g:svnim_map_prefix . "su :call s:Update()<CR>"
+execute "nnoremap <silent> " . g:svnim_map_prefix . "sl :<C-U>call s:Log(v:count)<CR>"
 
 autocmd FileType svnstatus nnoremap <silent> x :<C-U>call s:PrepareToCommit()<CR>
 autocmd FileType svnstatus nnoremap <silent> c :<C-U>call s:Commit()<CR>

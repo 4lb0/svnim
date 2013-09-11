@@ -2,7 +2,7 @@ SVN IMproved plugin
 
 Commands:
 
-* *sd* svn diff. You can also get the diff of version 123 by pressing *123sd*.
-* *ss* svn status. When the status windows is open you can press *x* to choosewherever file you want to commit and then *c* in order to commit.
-* *su* svn update.
-* *sl* svn log. By default will show last 10 commits, you can press *20sl* to get last 20 commits.
+* *<leader>sd* svn diff. You can also get the diff of version 123 by pressing *123sd*.
+* *<leader>ss* svn status. When the status windows is open you can press *x* to choosewherever file you want to commit and then *c* in order to commit.
+* *<leader>su* svn update.
+* *<leader>sl* svn log. By default will show last 10 commits, you can press *20sl* to get last 20 commits.
