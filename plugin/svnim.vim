@@ -91,14 +91,14 @@ function! s:Log(count)
 endfunction
 
 if !exists('g:svnim_map_prefix')
-  let g:svnim_map_prefix = '<leader>'
+  let g:svnim_map_prefix = '<leader>s'
 endif
 
-execute "nnoremap <silent> " . g:svnim_map_prefix . "sd :<C-U>call s:Diff(v:count)<CR>"
-execute "nnoremap <silent> " . g:svnim_map_prefix . "ss :call s:Status()<CR>"
-execute "nnoremap <silent> " . g:svnim_map_prefix . "su :call s:Update()<CR>"
-execute "nnoremap <silent> " . g:svnim_map_prefix . "sl :<C-U>call s:Log(v:count)<CR>"
+execute "nnoremap <silent> " . g:svnim_map_prefix . "d :<C-U>call <SID>Diff(v:count)<CR>"
+execute "nnoremap <silent> " . g:svnim_map_prefix . "s :<C-U>call <SID>Status()<CR>"
+execute "nnoremap <silent> " . g:svnim_map_prefix . "u :<C-U>call <SID>Update()<CR>"
+execute "nnoremap <silent> " . g:svnim_map_prefix . "l :<C-U>call <SID>Log(v:count)<CR>"
 
-autocmd FileType svnstatus nnoremap <silent> x :<C-U>call s:PrepareToCommit()<CR>
-autocmd FileType svnstatus nnoremap <silent> c :<C-U>call s:Commit()<CR>
+autocmd FileType svnstatus nnoremap <silent> x :<C-U>call <SID>PrepareToCommit()<CR>
+autocmd FileType svnstatus nnoremap <silent> c :<C-U>call <SID>Commit()<CR>
 
